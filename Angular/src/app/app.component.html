@@ -1,0 +1,25 @@
+
+<h1> Liste des étudiants</h1>
+
+<p (click)="selectStudent(StudentList[0])"> {{StudentList[0].name}}</p>
+<p>{{StudentList[1].name}}</p>
+<p>{{StudentList[2].name}}</p>
+<p>{{StudentList[3].name}}</p>
+<p>{{StudentList[4].name}}</p>
+<p>{{StudentList[5].name}}</p>
+<p>{{StudentList[6].name}}</p>
+
+<input type="number" (click)="selectId($event)"/>
+<input 
+    #boxInput
+    (keyup)="selectOneStudent(boxInput.value)"
+    type="number"    
+/>
+
+<p *ngFor="let student of StudentList">
+    {{ student.name }}
+</p>
+
+<div *ngIf="studentSelected"> {{studentSelected.name}} </div> 
+<div *ngIf="!studentSelected">L'étudiant n'existe pas</div>
+
