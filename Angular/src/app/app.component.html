@@ -1,5 +1,4 @@
 
-<h1> Liste des étudiants</h1>
 
 <p (click)="selectStudent(StudentList[0])"> {{StudentList[0].name}}</p>
 <p>{{StudentList[1].name}}</p>
@@ -22,4 +21,26 @@
 
 <div *ngIf="studentSelected"> {{studentSelected.name}} </div> 
 <div *ngIf="!studentSelected">L'étudiant n'existe pas</div>
+
+<h1 class="center"> Liste des étudiants</h1>
+
+<p appHighlight></p>
+<div class="container">
+    <div class="row">
+        <div *ngFor="let student of StudentList" class="col m4 s6">
+            <div studentBorderCard class="card horizontal" >
+                
+                <div class="card-image">
+                    <img [src]="student.picture">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                      <p>{{student.name}}</p>
+                      <p><span>{{student.joinDate}}</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 

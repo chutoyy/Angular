@@ -1,7 +1,7 @@
 import { Component,  OnInit } from '@angular/core';
 import { STUDENTS } from './mock-student-list';
 import { Student } from './Student';
-import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
@@ -9,6 +9,12 @@ import { FormsModule } from '@angular/forms';
   
   styles: []
 })
+
+
+
+
+
+
 export class AppComponent implements OnInit {
   StudentList: Student[] = STUDENTS;
   studentSelected : Student|undefined;
